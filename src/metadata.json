@@ -1,0 +1,24 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "woernsn@gmail.com",
+                "Name": "woernsn"
+            },
+            {
+                "Email": "cominixo01@gmail.com",
+                "Name": "cominixo"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "Shows your BG from Nightscout as a widget.",
+        "Icon": "applications-other",
+        "Id": "org.kde.plasma.nightscoutwidget",
+        "Name": "Nightscout Widget",
+        "Version": "2.0",
+        "Website": "https://github.com/woernsn/nightscout-widget-kde",
+        "BugReportUrl": "https://github.com/woernsn/nightscout-widget-kde/issues"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}

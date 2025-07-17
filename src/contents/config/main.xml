@@ -16,5 +16,8 @@
         <entry name="updateInterval" type="Int">
             <default>5</default>
         </entry>
+        <entry name="showUnits" type="Bool">
+            <default>true</default>
+        </entry>
     </group>
 </kcfg>
