@@ -10,7 +10,9 @@ KCMUtils.SimpleKCM {
     property alias cfg_nightscoutToken: nightscoutToken.text
     property alias cfg_updateInterval: updateInterval.value
     property alias cfg_showUnits: showUnits.checked
-    
+    property alias cfg_chartMin: chartMin.text
+    property alias cfg_chartMax: chartMax.text
+
     Kirigami.FormLayout {
 
         QQC2.TextField {
@@ -28,6 +30,14 @@ KCMUtils.SimpleKCM {
         QQC2.CheckBox {
             id: showUnits
             Kirigami.FormData.label: i18n("Show Units")
+        }
+        QQC2.TextField {
+            id: chartMin
+            Kirigami.FormData.label: i18n("Chart Minimum")
+        }
+        QQC2.TextField {
+            id: chartMax
+            Kirigami.FormData.label: i18n("Chart Maximum")
         }
     }
 }
