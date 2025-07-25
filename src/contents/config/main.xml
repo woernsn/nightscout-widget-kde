@@ -19,5 +19,11 @@
         <entry name="showUnits" type="Bool">
             <default>true</default>
         </entry>
+        <entry name="chartMin" type="Int">
+            <default>50</default>
+        </entry>
+        <entry name="chartMax" type="Int">
+            <default>300</default>
+        </entry>
     </group>
 </kcfg>

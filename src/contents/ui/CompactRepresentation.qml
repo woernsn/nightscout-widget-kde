@@ -1,4 +1,3 @@
-
 import QtQuick
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
@@ -17,7 +16,22 @@ ColumnLayout {
         text: glucose + "\n" + trend
 
         anchors.fill: parent
+
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
+
+        MouseArea {
+            id: mouseArea
+
+            anchors.fill: parent
+
+            property bool wasExpanded: false
+
+            hoverEnabled: true
+            onPressed: wasExpanded = root.expanded
+            onClicked: mouse => {
+                root.expanded = !wasExpanded;
+            }
+        }
     }
 }

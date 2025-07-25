@@ -15,7 +15,7 @@
         "Icon": "applications-other",
         "Id": "org.kde.plasma.nightscoutwidget",
         "Name": "Nightscout Widget",
-        "Version": "2.0",
+        "Version": "2.1.0",
         "Website": "https://github.com/woernsn/nightscout-widget-kde",
         "BugReportUrl": "https://github.com/woernsn/nightscout-widget-kde/issues"
     },
