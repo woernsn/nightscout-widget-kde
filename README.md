@@ -4,10 +4,10 @@ Plasma 6 widget made to read BG from Nightscout's [API](https://github.com/night
 
 The plasmoid supports both: a compact and a full mode.
 
-* The compact representation is targeting panels and shows the last reading with optional units (configurable) and the trend arrow.
-* The full representation shows a chart with readings of the last three hours in addition of the last reading and the trend arrow.
+* The compact representation is targeting panels and shows the last reading with optional units (configurable) and the trend arrow (1).
+* The full representation shows a chart with readings of the last three hours in addition of the last reading and the trend arrow (2).
 
-![Screenshot](img/overview.png)
+![Overview](img/overview.png)
 
 ## Usage
 
@@ -17,7 +17,7 @@ The plasmoid supports both: a compact and a full mode.
 
 ## Configuration
 
-![alt text](img/configuration.png)
+![Configuration](img/configuration.png)
 
 Use the KDE widget configuration to configure:
 
