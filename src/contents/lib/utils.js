@@ -23,5 +23,5 @@ function padTo2Digits(num) {
 }
 
 function isConfigDefault() {
-    return nightscoutURL == "https://appname.herokuapp.com" && nightscoutToken == "plasmoid-0000000"
+    return nightscoutURL == "https://appname.herokuapp.com" || nightscoutToken == "plasmoid-0000000";
 }

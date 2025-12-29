@@ -7,6 +7,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.components
 import org.kde.kirigami as Kirigami
 
+import "../lib/units.js" as Units
 import "../lib/utils.js" as Utils
 
 PlasmoidItem {
@@ -19,6 +20,7 @@ PlasmoidItem {
     property string nightscoutURL: Plasmoid.configuration.nightscoutURL
     property string nightscoutToken: Plasmoid.configuration.nightscoutToken
     property int updateInterval: Plasmoid.configuration.updateInterval
+    property bool units: Plasmoid.configuration.units
     property bool showUnits: Plasmoid.configuration.showUnits
     property int chartMin: Plasmoid.configuration.chartMin
     property int chartMax: Plasmoid.configuration.chartMax
@@ -49,6 +51,7 @@ PlasmoidItem {
 
     onNightscoutURLChanged: configChanged()
     onNightscoutTokenChanged: configChanged()
+    onUnitsChanged: configChanged()
     onShowUnitsChanged: configChanged()
     onChartMinChanged: configChanged()
     onChartMaxChanged: configChanged()
@@ -76,9 +79,10 @@ PlasmoidItem {
                 var j = response.content;
                 var bgs = j.bgs[0];
 
-                glucose = bgs.sgv;
+                glucose = Units.getUnitAwareValue(bgs.sgv, units);
+            
                 if (showUnits) {
-                    glucose += " mg/dl";
+                    glucose += " " + Units.getUnitText(units);
                 }
 
                 trend = trendArrows[bgs.trend];
@@ -99,7 +103,8 @@ PlasmoidItem {
                 var i = 0;
 
                 for (let entry of j.reverse()) {
-                    valArray.push(entry.sgv);
+                    var _glucose = Units.getUnitAwareValue(entry.sgv, units);
+                    valArray.push(_glucose);
 
                     var date = new Date(entry.created_at);
                     var paddedMinute = Utils.padTo2Digits(date.getMinutes());

@@ -16,13 +16,16 @@
         <entry name="updateInterval" type="Int">
             <default>5</default>
         </entry>
+        <entry name="units" type="Int">
+            <default>0</default>
+        </entry>
         <entry name="showUnits" type="Bool">
             <default>true</default>
         </entry>
-        <entry name="chartMin" type="Int">
+        <entry name="chartMin" type="Double">
             <default>50</default>
         </entry>
-        <entry name="chartMax" type="Int">
+        <entry name="chartMax" type="Double">
             <default>300</default>
         </entry>
     </group>
