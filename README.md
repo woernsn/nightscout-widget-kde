@@ -24,6 +24,7 @@ Use the KDE widget configuration to configure:
 * the NightScout server URL
 * the NightScout token
 * the update interval of the widget
+* the units to be used (mg/dl or mmol/l)
 * if the units should be shown in compact mode (useful for vertical panels)
 * the minimum of the chart range (glucose level)
 * the maximum of the chart range (glucose level)
