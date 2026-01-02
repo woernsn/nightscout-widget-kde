@@ -7,6 +7,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.components
 import org.kde.kirigami as Kirigami
 
+import "../lib/charsets.js" as Charsets
 import "../lib/units.js" as Units
 import "../lib/utils.js" as Utils
 
@@ -15,12 +16,11 @@ PlasmoidItem {
 
     Plasmoid.configurationRequired: true
 
-    readonly property var trendArrows: ["", "⬆️⬆️", "⬆️", "↗️", "➡️", "↘️", "⬇️", "⬇️⬇️", "↔️", "🔄"]
-
     property string nightscoutURL: Plasmoid.configuration.nightscoutURL
     property string nightscoutToken: Plasmoid.configuration.nightscoutToken
+    property int charset: Plasmoid.configuration.charset
     property int updateInterval: Plasmoid.configuration.updateInterval
-    property bool units: Plasmoid.configuration.units
+    property int units: Plasmoid.configuration.units
     property bool showUnits: Plasmoid.configuration.showUnits
     property int chartMin: Plasmoid.configuration.chartMin
     property int chartMax: Plasmoid.configuration.chartMax
@@ -51,6 +51,7 @@ PlasmoidItem {
 
     onNightscoutURLChanged: configChanged()
     onNightscoutTokenChanged: configChanged()
+    onCharsetChanged: configChanged()
     onUnitsChanged: configChanged()
     onShowUnitsChanged: configChanged()
     onChartMinChanged: configChanged()
@@ -85,7 +86,7 @@ PlasmoidItem {
                     glucose += " " + Units.getUnitText(units);
                 }
 
-                trend = trendArrows[bgs.trend];
+                trend = Charsets.getTrendArrow(charset, bgs.trend);
             } else {
                 glucose = "ERR";
                 trend = response.status;
