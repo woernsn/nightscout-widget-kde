@@ -13,6 +13,9 @@
         <entry name="nightscoutToken" type="String">
             <default>plasmoid-0000000</default>
         </entry>
+        <entry name="charset" type="Int">
+            <default>0</default>
+        </entry>
         <entry name="updateInterval" type="Int">
             <default>5</default>
         </entry>
