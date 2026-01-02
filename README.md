@@ -23,6 +23,7 @@ Use the KDE widget configuration to configure:
 
 * the NightScout server URL
 * the NightScout token
+* the charset for trend arrows
 * the update interval of the widget
 * the units to be used (mg/dl or mmol/l)
 * if the units should be shown in compact mode (useful for vertical panels)
