@@ -27,6 +27,7 @@ PlasmoidItem {
 
     property int usedChartMin: chartMin
     property int usedChartMax: chartMax
+    property string sanitizedNightscoutURL: nightscoutURL
 
     property string glucose: "???"
     property string trend: "???"
@@ -49,7 +50,10 @@ PlasmoidItem {
         }
     }
 
-    onNightscoutURLChanged: configChanged()
+    onNightscoutURLChanged: {
+        sanitizedNightscoutURL = Utils.trimTrailingChars(nightscoutURL, '/');
+        configChanged();
+    }
     onNightscoutTokenChanged: configChanged()
     onCharsetChanged: configChanged()
     onUnitsChanged: configChanged()
@@ -75,7 +79,7 @@ PlasmoidItem {
         }
 
         // get current glucose and trend
-        Utils.sendJsonRequest(nightscoutURL + "/pebble/?token=" + nightscoutToken, function (response) {
+        Utils.sendJsonRequest(sanitizedNightscoutURL + "/pebble/?token=" + nightscoutToken, function (response) {
             if (response.status == 200) {
                 var j = response.content;
                 var bgs = j.bgs[0];
@@ -94,7 +98,7 @@ PlasmoidItem {
         });
 
         // get last 3 hours' data for the chart
-        Utils.sendJsonRequest(nightscoutURL + "/api/v1/entries.json?count=37&token=" + nightscoutToken, function (response) {
+        Utils.sendJsonRequest(sanitizedNightscoutURL + "/api/v1/entries.json?count=37&token=" + nightscoutToken, function (response) {
             if (response.status == 200) {
                 var j = response.content;
 
