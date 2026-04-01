@@ -25,3 +25,10 @@ function padTo2Digits(num) {
 function isConfigDefault() {
     return nightscoutURL == "https://appname.herokuapp.com" || nightscoutToken == "plasmoid-0000000";
 }
+
+function trimTrailingChars(s, charToTrim) {
+  var regExp = new RegExp(charToTrim + "+$");
+  var result = s.replace(regExp, "");
+
+  return result;
+}
