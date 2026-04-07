@@ -111,7 +111,7 @@ PlasmoidItem {
                     var _glucose = Units.getUnitAwareValue(entry.sgv, units);
                     valArray.push(_glucose);
 
-                    var date = new Date(entry.created_at);
+                    var date = new Date(entry.date);
                     var paddedMinute = Utils.padTo2Digits(date.getMinutes());
 
                     if (i++ % 4 == 0) {
